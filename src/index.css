@@ -1,0 +1,13 @@
+@tailwind;
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+.btn {
+	@apply h-fit ;
+
+}
+
+.space-btn {
+	@apply px-12;
+}
