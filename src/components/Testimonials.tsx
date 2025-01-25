@@ -36,7 +36,6 @@ function Testimonials() {
 						<TestCard
 							{...e}
 							key={e.name  + i}
-							index={i}
 						/>
 					);
 				})}
@@ -45,7 +44,7 @@ function Testimonials() {
 	);
 }
 
-let TestCard = ({ name, job, review, index }) => {
+let TestCard = ({ name, job, review, }) => {
 	let [primcol] = useAtom(primary_atom);
 	let [textCol] = useAtom(text_atom);
 	let [accentCol] = useAtom(accent_atom);
@@ -85,7 +84,7 @@ let TestCard = ({ name, job, review, index }) => {
 			<div className="h-10 w-full items-center flex">
 				{Array(5)
 					.fill((e) => e)
-					.map((e,i) => (
+					.map((_,i) => (
 						<Star
 							fill={accentCol}
 							stroke="0"

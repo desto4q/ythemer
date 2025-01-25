@@ -42,7 +42,7 @@ let setTheme = (hex: string, colName: colName, search: any) => {
 	};
 	colorObj[colName] = parser(hex);
 	let combine = Object.entries(colorObj)
-		.map(([key, value]) => `${parser(value)}`)
+		.map(([_, value]) => `${parser(value)}`)
 		.join("-");
 	// console.log(combine);
 	return combine;
@@ -52,7 +52,7 @@ let convHex = (hex: string) => {
 	return "#" + hex;
 };
 
-let updateComps = (search: URLSearchParams, setSearch: SetURLSearchParams) => {
+let updateComps = (search: URLSearchParams, _: SetURLSearchParams) => {
 	let setBg = useSetAtom(bg_atom);
 	let setPrimary = useSetAtom(primary_atom);
 	let setSecondary = useSetAtom(secondary_atom);

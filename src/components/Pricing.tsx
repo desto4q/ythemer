@@ -79,7 +79,7 @@ function Pricing() {
 								{e.price}
 							</p>
 							<div className="flex flex-col gap-4 px-4 mt-6">
-								{e.features.map((feat, index) => {
+								{e.features.map((feat) => {
 									return (
 										<div
 											key={feat}
