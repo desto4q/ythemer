@@ -1,24 +1,13 @@
-import { useEffect, useState } from "react";
-import { primary_atom, text_atom } from "../../theme_store/themestore";
+import { primary_atom, setTheme } from "../../theme_store/themestore";
 import { useAtom } from "jotai";
-import { Colorful } from "@uiw/react-color";
+import { ColorPicker, useColor } from "react-color-palette";
+import { useSearchParams } from "react-router";
 
 function PrimaryUI() {
-	const [color, setColor] = useAtom(primary_atom);
-	const [tempColor, setTemp] = useState("");
-	const [textCol] = useAtom(text_atom);
+	const [primaary_color, setPrimary] = useAtom(primary_atom);
+	const [color, setColor] = useColor(primaary_color);
+	let [search, setSearch] = useSearchParams();
 
-	useEffect(() => {
-		setTemp(color);
-	}, [color]);
-
-	const handleKeyDown = (e) => {
-		if (e.key === "Enter") {
-			// Call setColor function when Enter is pressed (though it's already handled by onChange)
-			console.log("Color set to:", color);
-			setColor(tempColor);
-		}
-	};
 	return (
 		<div>
 			<div className="dropdown dropdown-top">
@@ -27,7 +16,7 @@ function PrimaryUI() {
 					role="button"
 					className="btn m-1 !text-black"
 					style={{
-						background: color,
+						background: primaary_color,
 					}}
 				>
 					Primary
@@ -36,34 +25,15 @@ function PrimaryUI() {
 					tabIndex={0}
 					className="dropdown-content menu bg-base-100 rounded-box z-[1] w-64 p-2 shadow flex flex-col gap-2"
 				>
-					<Colorful
+					<ColorPicker
 						color={color}
-						disableAlpha
-						className="!bg-slate-700 shadow-lg !w-full gap-2 flex flex-col !bg-transparent"
-						onChange={(e) => {
-							setColor(e.hex);
+						onChange={setColor}
+						onChangeComplete={(e) => {
+							setPrimary(e.hex);
+							let myString = setTheme(e.hex, "primary", search);
+							setSearch({ color: myString });
 						}}
-						// onChangeComplete={(e) => {
-						// 	// setColor(e.toHexString());
-						// 	console.log(e);
-						// }}
 					/>
-					<input
-						type="text"
-						placeholder="Type here"
-						className="input input-bordered w-full max-w-xs "
-						value={tempColor} // Use the temporary value for input field
-						onChange={(e) => {
-							setTemp(e.target.value);
-						}}
-						onKeyDown={handleKeyDown}
-					/>
-					<div
-						className={`h-10 w-full rounded-lg`}
-						style={{
-							background: color,
-						}}
-					></div>
 				</div>
 			</div>
 		</div>

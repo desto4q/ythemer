@@ -1,5 +1,5 @@
 import { atom, useSetAtom } from "jotai";
-import { SetURLSearchParams, useSearchParams } from "react-router";
+import { SetURLSearchParams } from "react-router";
 
 const countAtom = atom(0);
 const countryAtom = atom("Japan");
@@ -53,15 +53,17 @@ let convHex = (hex: string) => {
 };
 
 let updateComps = (search: URLSearchParams, setSearch: SetURLSearchParams) => {
-	// let [search, setSearch] = useSearchParams();
-	console.log("comp");
+	console.log("themeStore");
 	let setBg = useSetAtom(bg_atom);
 	let setPrimary = useSetAtom(primary_atom);
 	let setSecondary = useSetAtom(secondary_atom);
 	let setAccent = useSetAtom(accent_atom);
 	let setText = useSetAtom(text_atom);
 	let themeString = search.get("color");
-	let themeArr = themeString.split("-");
+	let themeArr = [];
+	if (search.has("color")) {
+		themeArr = themeString.split("-");
+	}
 	let updateColor = () => {
 		setBg("#" + themeArr[0]);
 		setPrimary(convHex(themeArr[1]));
@@ -69,24 +71,7 @@ let updateComps = (search: URLSearchParams, setSearch: SetURLSearchParams) => {
 		setAccent("#" + themeArr[3]);
 		setText("#" + themeArr[4]);
 	};
-	return {updateColor};
-};
-let updateUrl = () => {
-	console.log("updaint");
-	let [search, setSearch] = useSearchParams();
-	let setBg = useSetAtom(bg_atom);
-	let setPrimary = useSetAtom(primary_atom);
-	let setSecondary = useSetAtom(secondary_atom);
-	let setAccent = useSetAtom(accent_atom);
-	let setText = useSetAtom(text_atom);
-	let themeString = search.get("color");
-	let themeArr = themeString.split("-");
-	console.log(themeArr, "arr");
-	setBg("#" + themeArr[0]);
-	setPrimary(convHex(themeArr[1]));
-	setSecondary(convHex(themeArr[2]));
-	setAccent("#" + themeArr[3]);
-	setText("#" + themeArr[4]);
+	return { updateColor };
 };
 
 export {
@@ -96,6 +81,5 @@ export {
 	primary_atom,
 	secondary_atom,
 	accent_atom,
-	updateUrl,
 	setTheme,
 };

@@ -10,13 +10,16 @@ import LandMarkSection from "../components/LandMarkSection";
 import WhySection from "../components/WhySection";
 import Hero from "../components/Hero";
 import NavBar from "../components/NavBar";
+import { useAtom } from "jotai";
+import { bg_atom } from "../theme_store/themestore";
 
 function MainPage() {
 	// let {} = use
+	let [bg_col] = useAtom(bg_atom);
 	return (
 		<div
 			style={{
-				background: "black",
+				background: bg_col,
 			}}
 			className=" "
 		>
