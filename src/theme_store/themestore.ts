@@ -44,7 +44,7 @@ let setTheme = (hex: string, colName: colName, search: any) => {
 	let combine = Object.entries(colorObj)
 		.map(([key, value]) => `${parser(value)}`)
 		.join("-");
-	console.log(combine);
+	// console.log(combine);
 	return combine;
 };
 
@@ -53,7 +53,6 @@ let convHex = (hex: string) => {
 };
 
 let updateComps = (search: URLSearchParams, setSearch: SetURLSearchParams) => {
-	console.log("themeStore");
 	let setBg = useSetAtom(bg_atom);
 	let setPrimary = useSetAtom(primary_atom);
 	let setSecondary = useSetAtom(secondary_atom);

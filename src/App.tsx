@@ -1,7 +1,8 @@
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { useSearchParams } from "react-router";
 import Routing from "./routing/router";
-import { updateComps } from "./theme_store/themestore";
+import { bg_atom, updateComps } from "./theme_store/themestore";
+import { useAtom } from "jotai";
 
 let parser = (hex: string) => {
 	let parsed = hex.replace("#", "");
@@ -25,6 +26,7 @@ function App() {
 	};
 
 	let { updateColor } = updateComps(search, setCol);
+
 	
 	let setUrl = () => {
 		let keys = Object.keys(baseCol);
@@ -35,6 +37,17 @@ function App() {
 		}
 		updateURL();
 	};
+
+	let [bg_color] = useAtom(bg_atom);
+	useEffect(() => {
+		// Update the body's background color when bg_color changes
+		document.body.style.backgroundColor = bg_color;
+
+		// Optional cleanup (not needed for background color, but good practice for effects that add/remove listeners, etc.)
+		return () => {
+			document.body.style.backgroundColor = ""; // Reset to default
+		};
+	}, [bg_color]);
 
 	useLayoutEffect(() => {
 		setUrl();
