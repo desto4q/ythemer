@@ -1,7 +1,14 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+	"files": [],
+	"references": [
+		{ "path": "./tsconfig.app.json" },
+		{ "path": "./tsconfig.node.json" }
+	],
+	"compilerOptions": {
+    "strict": false,
+	"noUnusedLocals": false,
+	"noUnusedParameters": true,
+	"noFallthroughCasesInSwitch": true,
+	"noUncheckedSideEffectImports": true
+  }
 }
