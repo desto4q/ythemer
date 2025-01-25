@@ -1,5 +1,10 @@
 import { useAtom } from "jotai";
-import { primary_atom, text_atom } from "../theme_store/themestore";
+import {
+	accent_atom,
+	primary_atom,
+	text_atom,
+} from "../theme_store/themestore";
+import { Star } from "lucide-react";
 
 let testimonials_data = [
 	{
@@ -30,7 +35,7 @@ function Testimonials() {
 					return (
 						<TestCard
 							{...e}
-							key={e.name}
+							key={e.name  + i}
 							index={i}
 						/>
 					);
@@ -43,6 +48,7 @@ function Testimonials() {
 let TestCard = ({ name, job, review, index }) => {
 	let [primcol] = useAtom(primary_atom);
 	let [textCol] = useAtom(text_atom);
+	let [accentCol] = useAtom(accent_atom);
 	return (
 		<div
 			className="h-[350px] p-6 py-12 rounded-lg gap-4 flex  flex-col"
@@ -69,14 +75,25 @@ let TestCard = ({ name, job, review, index }) => {
 					<p
 						className=""
 						style={{
-							color: textCol+"80",
+							color: textCol + "80",
 						}}
 					>
 						{job}
 					</p>
 				</div>
 			</div>
-			<div className="h-10 w-full bg-emerald-400"></div>
+			<div className="h-10 w-full items-center flex">
+				{Array(5)
+					.fill((e) => e)
+					.map((e,i) => (
+						<Star
+							fill={accentCol}
+							stroke="0"
+							size={32}
+							key={"star" + i}
+						/>
+					))}
+			</div>
 			<p
 				style={{
 					color: textCol,

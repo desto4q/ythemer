@@ -7,6 +7,7 @@ import {
 	text_atom,
 } from "../theme_store/themestore";
 import fontColorContrast from "font-color-contrast";
+import { Mouse } from "lucide-react";
 
 function Hero() {
 	const [text_color] = useAtom(text_atom);
@@ -15,13 +16,14 @@ function Hero() {
 	const [accent_color] = useAtom(accent_atom);
 	let contrast = fontColorContrast(secondary_color);
 	let primary_contrast = fontColorContrast(primary_color);
+	// }, []);
 	return (
 		<div className="container mx-auto lg:h-[calc(100dvh-80px)] lg:max-h-[760px] flex justify-between flex-wrap flex-col-reverse">
 			<div className="flex flex-col py-4 justify-center gap-6 lg:gap-12 flex-[1_1_50%]  min-w-[300px] px-2 lg:px-0 lg:min-w-[400px]  ">
 				<h2
 					className="text-3xl  lg:text-5xl font-bold lg:leading-normal  "
 					style={{
-						color: text_color,
+						color: "white",
 					}}
 				>
 					Visualize Your <br />
@@ -73,11 +75,12 @@ function Hero() {
 					</button>
 				</div>
 				<p
-					className=""
+					className="inline-flex gap-2"
 					style={{
 						color: text_color,
 					}}
 				>
+					<Mouse />
 					scroll to see more sections
 				</p>
 			</div>

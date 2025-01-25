@@ -1,18 +1,22 @@
 import { useAtom } from "jotai";
 import { primary_atom, text_atom } from "../theme_store/themestore";
+import { Blocks, Clock, Cookie } from "lucide-react";
 
 let section_data = [
 	{
 		title: "Save Time",
 		body: "Get your website looking amazing in no time with a ready-to-use theme.",
+		Icon: Clock,
 	},
 	{
 		title: "Super Simple",
 		body: " No need to stress—customizing your theme is easy and hassle-free.",
+		Icon: Cookie,
 	},
 	{
 		title: "Loads of Colors",
 		body: "Pick from tons of color templates to match your vibe perfectly!",
+		Icon: Blocks,
 	},
 ];
 
@@ -43,7 +47,7 @@ function WhySection() {
 	);
 }
 
-let SectionCard = ({ title, body }) => {
+let SectionCard = ({ title, body, Icon }) => {
 	let [textCol] = useAtom(text_atom);
 	let [primaryCol] = useAtom(primary_atom);
 
@@ -54,14 +58,20 @@ let SectionCard = ({ title, body }) => {
 				background: primaryCol + "1A",
 			}}
 		>
-			<div className="h-1/2"></div>
+			<div
+				className="h-1/2 flex items-center justify-center"
+				style={{
+					color: textCol,
+				}}
+			>
+				<Icon size={120} />
+			</div>
 			<h2
 				className="mx-auto text-2xl font-bold"
 				style={{
 					color: textCol,
 				}}
 			>
-				{" "}
 				{title}
 			</h2>
 			<p

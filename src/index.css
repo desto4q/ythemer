@@ -4,7 +4,7 @@
 @tailwind components;
 
 .btn {
-	@apply h-fit ;
+	@apply h-fit  shadow-none outline-none border-none;
 
 }
 

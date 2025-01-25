@@ -1,15 +1,11 @@
 import { useAtom } from "jotai";
-import {
-    primary_atom,
-    secondary_atom,
-    text_atom,
-} from "../theme_store/themestore";
+import { primary_atom, text_atom } from "../theme_store/themestore";
+import fontColorContrast from "font-color-contrast";
 
 function Other() {
-	let [secondCol] = useAtom(secondary_atom);
 	let [primary] = useAtom(primary_atom);
 	let [textCol] = useAtom(text_atom);
-
+	let contrastCol = fontColorContrast(primary);
 	return (
 		<div
 			className="container mx-auto flex flex-col py-6 gap-4"
@@ -24,9 +20,10 @@ function Other() {
 				Just some interesting guides and posts.
 			</p>
 			<button
-				className=" btn mt-8 mx-auto btn-wide !text-black"
+				className=" btn mt-8 mx-auto btn-wide "
 				style={{
 					background: primary,
+					color: contrastCol,
 				}}
 			>
 				Stayed Tuned

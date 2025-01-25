@@ -88,9 +88,9 @@ let Accord = ({ title, detail, selectedIndex, setIndex, i }) => {
 		<div
 			style={{
 				background:
-					selectedIndex === i ? primcol + "1A" : null,
+					selectedIndex === i ? primcol + "1A" : primcol + "0A",
 			}}
-			className="cursor-pointer p-4 btn-ghost active:scale-95 duration-300 rounded-lg flex flex-col "
+			className="cursor-pointer p-4 b btn-ghost active:scale-95 duration-300 rounded-lg flex flex-col "
 			onClick={() => {
 				// console.log(selectedIndex);
 				if (selectedIndex != i) {
