@@ -26,16 +26,16 @@ let testimonials_data = [
 function Testimonials() {
 	return (
 		<div className="container mx-auto py-6 flex flex-col gap-4 justify-center items-center">
-			<h2 className="text-5xl font-bold">Testimonials</h2>
-			<p className="text-lg font-bold">
+			<h2 className="text-3xl text-center lg:text-5xl  font-bold">Testimonials</h2>
+			<p className="text-md text-center lg:text-lg font-bold px-4 lg:px-0">
 				AI generated users comments and review (its fake fyi){" "}
 			</p>
-			<div className=" mt-8 w-full grid grid-cols-[repeat(auto-fit,350px)] gap-4 lg:gap-8 justify-center items-center">
+			<div className=" mt-8 w-full grid grid-cols-[repeat(auto-fit,320px)] lg:grid-cols-[repeat(auto-fit,350px)] gap-4 lg:gap-8 justify-center items-center">
 				{testimonials_data.map((e, i) => {
 					return (
 						<TestCard
 							{...e}
-							key={e.name  + i}
+							key={e.name + i}
 						/>
 					);
 				})}
@@ -44,7 +44,7 @@ function Testimonials() {
 	);
 }
 
-let TestCard = ({ name, job, review, }) => {
+let TestCard = ({ name, job, review }) => {
 	let [primcol] = useAtom(primary_atom);
 	let [textCol] = useAtom(text_atom);
 	let [accentCol] = useAtom(accent_atom);
@@ -84,7 +84,7 @@ let TestCard = ({ name, job, review, }) => {
 			<div className="h-10 w-full items-center flex">
 				{Array(5)
 					.fill((e) => e)
-					.map((_,i) => (
+					.map((_, i) => (
 						<Star
 							fill={accentCol}
 							stroke="0"

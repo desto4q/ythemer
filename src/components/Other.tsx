@@ -13,10 +13,10 @@ function Other() {
 				color: textCol,
 			}}
 		>
-			<h2 className="mx-auto text-5xl font-bold">
+			<h2 className="text-center  mx-auto text-3xl lg:text-5xl font-bold px-3 lg:px-0">
 				Your Journey Shouldn't End Here.
 			</h2>
-			<p className="text-xl mx-auto">
+			<p className=" text-center text-md lg:text-xl mx-auto">
 				Just some interesting guides and posts.
 			</p>
 			<button

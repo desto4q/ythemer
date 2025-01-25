@@ -49,8 +49,8 @@ function Pricing() {
 	let textContrast = fontColorContrast(primCol);
 	return (
 		<div className="container mx-auto py-6 flex flex-col gap-4 justify-center items-center">
-			<h2 className="text-5xl font-bold">Pricing & Plans</h2>
-			<p className="text-lg font-bold">
+			<h2 className=" text-3xl text-center lg:text-5xl font-bold">Pricing & Plans</h2>
+			<p className=" text-md lg:text-lg font-bold text-center ">
 				The tool is 100% free! This is just a generic section.
 			</p>
 			<div className=" mt-8 w-full grid grid-cols-[repeat(auto-fit,350px)] gap-4 lg:gap-8 justify-center items-center">

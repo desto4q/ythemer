@@ -7,7 +7,7 @@ function Featured() {
 	return (
 		<div className="container mx-auto flex flex-col py-6 gap-4">
 			<h2
-				className="mx-auto text-5xl font-bold"
+				className="mx-auto text-3xl text-center lg:text-5xl font-bold"
 				style={{
 					color: textCol,
 				}}
@@ -15,14 +15,14 @@ function Featured() {
 				Featured Articles
 			</h2>
 			<p
-				className="text-xl mx-auto"
+				className="text-md text-center lg:text-xl mx-auto "
 				style={{
 					color: textCol,
 				}}
 			>
 				Just some interesting guides and posts.
 			</p>
-			<div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] justify-evenly gap-4 mt-8">
+			<div className="grid px-4 lg:px-0 grid-cols-[repeat(auto-fit,minmax(250px,1fr))] justify-evenly gap-4 mt-8">
 				<div
 					className="h-20 rounded-md"
 					style={{

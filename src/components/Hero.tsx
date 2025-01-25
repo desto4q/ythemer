@@ -23,7 +23,7 @@ function Hero() {
 				<h2
 					className="text-3xl  lg:text-5xl font-bold lg:leading-normal  "
 					style={{
-						color: "white",
+						color: text_color,
 					}}
 				>
 					Visualize Your <br />
