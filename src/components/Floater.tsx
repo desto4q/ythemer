@@ -35,6 +35,10 @@ function Floater() {
 		  document.removeEventListener("keydown", handleKeyDown);
 		};
 	  }, [modalOpen]);
+
+	  let openExportModal = ()=>{
+		setModalOpen(!modalOpen)
+	  }
 	return (
 		<div
 			className="fixed w-full bottom-0  mb-4 left-0   p-2 flex  z-10 bg-neutral-800 md:bg-neutral-600 lg:bg-opacity-25 "
@@ -42,17 +46,17 @@ function Floater() {
 		>
 			{modalOpen ? (
 				<div
-					className="fixed w-full h-full bg-gray-800 bg-opacity-50 backdrop-blur-md top-0 left-0 flex items-center justify-center z-20"
+					className="fixed w-full h-full bg-gray-800 bg-opacity-50 backdrop-blur-md top-0 left-0 flex items-center justify-center  px-4 md:px-0"
 					onClick={() => {
-						console.log("outer");
+						// console.log("outer");
 						setModalOpen(false);
 					}}
 				>
 					<div
-						className="w-full max-w-[500px]  p-2 rounded-md bg-neutral-800"
+						className="w-full max-w-[500px]  p-2 rounded-md bg-neutral-800 "
 						onClick={(e) => {
 							e.stopPropagation();
-							console.log("inner");
+							// console.log("inner");
 						}}
 					>
 						<ExportTabs />
@@ -61,9 +65,9 @@ function Floater() {
 			) : null}
 
 			<div className="md:hidden w-full h-full">
-				<MobileChangers/>
+				<MobileChangers openExportModal={openExportModal}/>
 			</div>
-			<div className="hidden w-full container  mx-auto  h-14 md:flex items-center">
+			<div className="hidden w-full container  mx-auto  h-14 md:flex items-center lg:z-10">
 				<TextUi />
 				<BgUi />
 				<PrimaryUI />

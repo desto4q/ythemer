@@ -1,24 +1,21 @@
 import { useAtom } from "jotai";
 import {
-    accent_atom,
-    bg_atom,
-    primary_atom,
-    secondary_atom,
-    text_atom,
+	accent_atom,
+	bg_atom,
+	primary_atom,
+	secondary_atom,
+	text_atom,
 } from "../theme_store/themestore";
-import fontColorContrast from "font-color-contrast";
 import { useEffect, useState } from "react";
 import MobileUiChanger from "./ui_changers/MobileUiChanger";
 import { PlusIcon } from "lucide-react";
 
-function MobileChangers() {
+function MobileChangers({ openExportModal }: { openExportModal: () => any }) {
 	let [bg_color, setBackground] = useAtom(bg_atom);
 	let [primary_color, setPrimary] = useAtom(primary_atom);
 	let [secondary_color, setSecondary] = useAtom(secondary_atom);
 	let [accent_color, setAccent] = useAtom(accent_atom);
 	let [text_color, setText] = useAtom(text_atom);
-	let primContrast = fontColorContrast(primary_color);
-	let secContrast = fontColorContrast(secondary_color);
 
 	let arr = [
 		{
@@ -139,13 +136,15 @@ function MobileChangers() {
 				style={{
 					color: text_color,
 					background: bg_color,
-					outline: modalOpen?`1px solid ${text_color}`:null,
-                    
+					outline: modalOpen ? `1px solid ${text_color}` : null,
 				}}
 			>
 				Color <PlusIcon size={16} />
 			</button>
 			<button
+				onClick={(_) => {
+					openExportModal();
+				}}
 				className="p-3 rounded-lg flex items-center gap-2"
 				style={{
 					background: bg_color,
