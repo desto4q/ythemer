@@ -39,7 +39,7 @@ function Faq() {
 	return (
 		<div className="container mx-auto py-4 px-4">
 			<div
-				className="rounded-md  p-8 lg:py-20 flex flex-wrap gap-2"
+				className="rounded-md px-4 lg:px-8  p-8 lg:py-20 flex flex-wrap gap-2"
 				// style={{
 				// 	background: secondaryCol + "33",
 				// }}
@@ -54,7 +54,7 @@ function Faq() {
 						FAQ
 					</h2>
 					<p
-						className="text-xl"
+						className="text-xl min-w-[302px]"
 						style={{
 							color: textCol,
 						}}

@@ -1,11 +1,11 @@
 import { useAtom } from "jotai";
 import { useRef, useState } from "react";
 import {
-    accent_atom,
-    bg_atom,
-    primary_atom,
-    secondary_atom,
-    text_atom,
+	accent_atom,
+	bg_atom,
+	primary_atom,
+	secondary_atom,
+	text_atom,
 } from "../theme_store/themestore";
 import { hexToHslString, hexToRgbString } from "../theme_store/converters";
 

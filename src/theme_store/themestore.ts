@@ -82,3 +82,5 @@ export {
 	accent_atom,
 	setTheme,
 };
+
+export  type {colName}
