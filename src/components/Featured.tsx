@@ -24,23 +24,29 @@ function Featured() {
 			</p>
 			<div className="grid px-4 lg:px-0 grid-cols-[repeat(auto-fit,minmax(250px,1fr))] justify-evenly gap-4 mt-8">
 				<div
-					className="h-20 rounded-md"
+					className="h-20 rounded-md flex items-center justify-center"
 					style={{
 						background: secondCol + "1A",
 					}}
-				></div>
+				>
+					How to select Colors
+				</div>
 				<div
-					className="h-20 rounded-md"
+					className="h-20 rounded-md flex items-center justify-center"
 					style={{
 						background: secondCol + "1A",
 					}}
-				></div>
+				>
+					Terminal Theme
+				</div>
 				<div
-					className="h-20 rounded-md"
+					className="h-20 rounded-md flex items-center justify-center"
 					style={{
 						background: secondCol + "1A",
 					}}
-				></div>
+				>
+					Dashboard Theme
+				</div>
 			</div>
 		</div>
 	);

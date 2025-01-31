@@ -1,5 +1,6 @@
 import { useAtom } from "jotai";
 import { bg_atom, text_atom } from "../theme_store/themestore";
+import { Github } from "lucide-react";
 
 function Footer() {
 	let [bgCol] = useAtom(bg_atom);
@@ -32,10 +33,17 @@ function Footer() {
 							color: textCol,
 						}}
 					>
-						ACME Industries Ltd.
+						Ythemer
 						<br />
-						Providing reliable tech since 1992
+						Visualize your Colors
 					</p>
+					<a
+						target="_blank"
+						href="https://github.com/desto4q"
+						className="btn "
+					>
+						<Github /> Find Me on Github
+					</a>
 				</aside>
 				<nav
 					style={{
