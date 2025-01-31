@@ -143,6 +143,9 @@ function MobileChangers({ openExportModal }: { openExportModal: () => any }) {
 			</button>
 			<button
 				onClick={(_) => {
+					if (modalOpen){
+						setModalOpen(false)
+					}
 					openExportModal();
 				}}
 				className="p-3 rounded-lg flex items-center gap-2"

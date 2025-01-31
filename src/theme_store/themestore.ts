@@ -9,11 +9,13 @@ const mangaAtom = atom({
 	"One Piece": 1997,
 	Naruto: 1999,
 });
+// 88a0f2-f8f8fb-676fb0-cb9bb7-be81822
 const bg_atom = atom("#0d0404");
-const text_atom = atom("#cccccc");
 const primary_atom = atom("#e19695");
 const secondary_atom = atom("#248263");
 const accent_atom = atom("#3882c7");
+const text_atom = atom("#cccccc");
+
 
 let colorObj = {
 	background: "#0d0404",
