@@ -21,7 +21,7 @@ function Hero() {
 		<div className="container mx-auto lg:h-[calc(100dvh-80px)] lg:max-h-[760px] flex justify-between flex-wrap flex-col-reverse">
 			<div className="flex flex-col py-4 justify-center gap-6 lg:gap-12 flex-[1_1_50%]  min-w-[300px] px-2 lg:px-0 lg:min-w-[400px]  ">
 				<h2
-					className="text-3xl  lg:text-5xl font-bold lg:leading-normal  "
+					className="text-3xl text-center  lg:text-start lg:text-5xl font-bold lg:leading-normal  "
 					style={{
 						color: text_color,
 					}}
@@ -43,7 +43,7 @@ function Hero() {
 					<br /> On a Real Website.
 				</h2>
 				<p
-					className="leading-loose"
+					className="leading-loose text-center  lg:text-start"
 					style={{
 						color: text_color,
 					}}
@@ -52,7 +52,7 @@ function Hero() {
 					Use theToolbar below to realize your choices.
 				</p>
 
-				<div className="flex items-center gap-4 ">
+				<div className="flex items-center gap-4 justify-center lg:justify-start ">
 					<button
 						className="btn lg:px-12"
 						style={{
@@ -75,7 +75,7 @@ function Hero() {
 					</button>
 				</div>
 				<p
-					className="inline-flex gap-2"
+					className="inline-flex gap-2 justify-center lg:justify-start text-center  lg:text-start"
 					style={{
 						color: text_color,
 					}}

@@ -17,6 +17,9 @@ let baseCol = {
 	text: "#cccccc",
 };
 function App() {
+	useLayoutEffect(()=>{
+		document.title = "ythemer"
+	},[])
 	let [search, setCol] = useSearchParams();
 	let updateURL = () => {
 		let combinedString = Object.entries(baseCol)
@@ -30,7 +33,7 @@ function App() {
 	
 	let setUrl = () => {
 		let keys = Object.keys(baseCol);
-		console.log(keys);
+		// console.log(keys);
 		if (search.has("color")) {
 			updateColor();
 			return;
